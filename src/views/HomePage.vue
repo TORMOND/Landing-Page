@@ -4,26 +4,39 @@
       <nav>
           <div class="fb-point">
           <div class="logo">
-<img src="piemelogo.png" alt="" class="image-logo">
+      <img src="piemelogo.png" alt="" class="image-logo">
     </div>
           <input type="text" placeholder="Search" class="field">
 
-           <span class="search" @click="toggle"><i class="fas fa-search"></i></span>
+           <span class="search" @click="toggle">
+            <i class="fas fa-search"></i>
+            
+            </span>
           </div>
           
           <div class="navigate">
               
-            <span ><i class="fas fa-home"></i></span>            
-           <span><i class="fab fa-youtube"></i></span>
-             <span><i class="fas fa-store"></i></span>      
-             <span><label class="user" ><i class="fas fa-users"></i></label></span>
+            <span>
+                <i class="fas fa-home"></i>
+                </span>            
+           <span>
+           <i class="fab fa-youtube"></i>
+           </span>
+             <span>
+                <i class="fas fa-store"></i>
+                </span>      
+             <span><label class="user" >
+                <i class="fas fa-users"></i></label>
+                </span>
           </div>
           <div class="extras">
               <label @click="run">
               
                   <div class="user-pic">        
   <img :src="profilePic" v-if="profilePic=this.profilePic ">
-              <span v-else><i class="fas fa-user"></i></span>  
+              <span v-else>
+                <i class="fas fa-user"></i>
+                </span>  
 </div>   
               <p>{{name}}</p>
               </label>
@@ -39,8 +52,7 @@
  <img :src="profilePic" v-if="profilePic=this.profilePic ">
               <span v-else><i class="fas fa-user"></i></span>  
 </div>   
-  <!-- <span><i class="fas fa-user"></i></span> -->
-  <p>{{name}} {{secondName}}</p>
+  <p>{{name}}</p>
     </div>
    
 </div>
@@ -247,19 +259,19 @@
               <span v-else><i class="fas fa-user"></i></span>  
 </div>   
   <!-- <span><i class="fas fa-user"></i></span> -->
-  <p>{{name}} {{secondName}}</p>
+  <p>{{name}}</p>
     </div>
       <div class="post" @click="run">
   <span><i class="fas fa-user"></i></span>
-  <p>{{name}} {{secondName}}</p>
+  <p>{{name}}</p>
     </div>
       <div class="post" @click="run">
   <span><i class="fas fa-user"></i></span>
-  <p>{{name}} {{secondName}}</p>
+  <p>{{name}}</p>
     </div>
       <div class="post" @click="run">
   <span><i class="fas fa-user"></i></span>
-  <p>{{name}} {{secondName}}</p>
+  <p>{{name}}</p>
     </div>
 </div>
 </div>
@@ -365,13 +377,10 @@
 </template>
 
 <script>
-// import { getStorage, ref, uploadBytes, getDownloadURL, listAll } from "firebase/storage";
-// import { initializeApp } from "firebase/app";
-// import { getFirestore, collection, addDoc, doc, getDocs, getDoc, setDoc,  onSnapshot, query, where, updateDoc, Firestore, serverTimestamp, orderBy} from "firebase/firestore"
-// import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
-// import { getAnalytics } from "firebase/analytics";
-
-// import{ app, db, auth, firebaseConfig, user } from '@/firebase.js'
+// import{ app, db, auth, firebaseConfig, user, onAuthStateChanged,
+//  getStorage, ref, uploadBytes, getDownloadURL, listAll, getFirestore, 
+//signOut, collection, addDoc, doc, getDocs, getDoc, setDoc,  onSnapshot, query,
+// where, updateDoc, Firestore, serverTimestamp, orderBy  } from '@/firebase.js'
 
 // export default {
 //     data() {
@@ -757,8 +766,6 @@
     cursor: pointer;
     font-weight: bold;
 }
-
-
 #popup{
     position:fixed;
     background: #fff;
@@ -780,8 +787,7 @@
   opacity: 0.15;
     pointer-events: none;
     user-select: none;
-    transition: 1s;
-    
+    transition: 1s;   
 }
 .field:focus{
     outline: none;
@@ -1368,12 +1374,6 @@ textarea:focus{
 .close-card:hover{
     background: #e4e6eb;
 }
-.fa-bookmark{
-   background: linear-gradient(-135deg, #c512b9, #4158d0); 
-   -webkit-background-clip: text;
-   -webkit-text-fill-color:transparent ;
-}
-
 .elements a{
     color:#65676b;
     text-decoration: none;

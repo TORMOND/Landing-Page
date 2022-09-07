@@ -6,8 +6,13 @@
 </template>
 
 <style>
+@font-face {
+font-family: "DidactGothic";
+src: url("../public/didact-gothic/DidactGothic-Regular.ttf");
+
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: DidactGothic , sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

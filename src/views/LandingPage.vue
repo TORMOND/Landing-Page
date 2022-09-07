@@ -44,10 +44,17 @@
 
 
   <div class="wrapper">
-    <div class="side-infor">
-      <h1>Pieme</h1>
-      <h5>FOR US BY US</h5>
-      <div class="line"></div>
+    
+    <div class="main-infor">
+<h1>PIEME. FOR US. BY US.</h1>
+<p>Do you love cooking? Turn your home into a part-time resturant
+and host events at you home.</p>
+<div class="btns">
+<button class="login" @click="loginPage">LOGIN</button>
+<button class="host">BECOME A HOST</button>
+</div>
+
+<div class="side-infor">
       <div class="social-icons">
          <div class="brand">
           <font-awesome-icon icon="fabFacebook" class="brand-icons" /> 
@@ -63,15 +70,6 @@
          </div>
       </div>
     </div>
-    <div class="main-infor">
-<h1>PIEME. FOR US, BY US.</h1>
-<p>Do you love cooking? Turn your home into a part-time resturant
-and host events at you home.</p>
-<div class="btns">
-<button class="login" @click="loginPage">LOGIN</button>
-<button class="host">BECOME A HOST</button>
-</div>
-
     </div>
   </div>
 
@@ -313,7 +311,6 @@ Footer, Carousel
 }
 .social-icons{
   display: flex;
-  flex-direction: column;
   gap: 5px;
   padding-left: 20px;
 }
@@ -383,6 +380,7 @@ box-shadow: 3px 3px 3px #ceced1;
 .wrapper{
   display: flex;
   gap: 40px;
+  justify-content: center;
   padding: 10px 40px;
 }
 .line{
@@ -400,7 +398,7 @@ box-shadow: 3px 3px 3px #ceced1;
   flex-direction: column;
   justify-content: end;
   align-items:flex-start;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .main-infor h1{
   font-size: 56px;
@@ -456,7 +454,6 @@ animation-iteration-count: infinite;
   text-align: start;
   padding: 20px;
   color: #777777;
-
 }
 .headers, .news-headers{
   display: flex;
@@ -465,7 +462,6 @@ animation-iteration-count: infinite;
   font-size: 24px;
   box-sizing: border-box;
 }
-
 .pieme-header{
    color: #BAD8F5;
 }

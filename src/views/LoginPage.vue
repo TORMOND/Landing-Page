@@ -15,9 +15,9 @@
         </section>
      <p class="fgt-pass">forgot password?</p>
 
-     <button class="login">LOGIN</button>
+     <button class="login" @click.prevent="login">LOGIN</button>
      <span>or</span>
-     <button class="signup">SIGN UP</button>
+     <button class="signup" @click.prevent="signupPage">SIGN UP</button>
     </form> 
     </div>
    <div class="infor-section">
@@ -72,7 +72,19 @@
 
 <script>
 export default {
+data() {
+  return {
+    
+  }
+},
+methods: {
+  signupPage:function(){
+    this.$router.push('/signupPage')
+  },
+  login:function(){
 
+  }
+},
 }
 </script>
 
@@ -81,6 +93,9 @@ export default {
   background: url(/happy.jpg)no-repeat center;
   background-size:cover;
   object-fit: cover;  
+  box-sizing: border-box; 
+  min-height: 100vh;
+  width: 100vw;
 }
 .container{
    background-color: rgba(0, 0, 0, 0.5);
