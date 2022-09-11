@@ -20,7 +20,7 @@
      <button class="signup" @click.prevent="signupPage">SIGN UP</button>
     </form> 
     </div>
-   <div class="infor-section">
+   <!-- <div class="infor-section">
     <h1>Authentic Local food:</h1>
     <h1>For Us, By Us</h1>
  
@@ -64,7 +64,7 @@
         </div>
       </button>
     </div>
-   </div>  
+   </div>   -->
     </div>
   
   </div>
@@ -216,6 +216,7 @@ color: #edd00a;
   background-color:#fff;
   object-fit: cover;
   display:flex;
+  overflow:hidden;
 }
 .description-image img{
   margin:auto;

@@ -11,6 +11,7 @@ font-family: "DidactGothic";
 src: url("../public/didact-gothic/DidactGothic-Regular.ttf");
 
 }
+
 #app {
   font-family: DidactGothic , sans-serif;
   -webkit-font-smoothing: antialiased;

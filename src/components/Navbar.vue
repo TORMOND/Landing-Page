@@ -7,7 +7,7 @@
           <input type="text" placeholder="Search" class="field">
 
            <span class="search" @click="toggle">
-            <i class="fas fa-search"></i>
+            <font-awesome-icon icon="fa-magnifying-glass" />
             
             </span>
           </div>
@@ -15,13 +15,13 @@
           <div class="navigate">
               
             <span>
-                <i class="fas fa-home"></i>
+               <font-awesome-icon icon="fa-house" />
                 </span>            
            <span>
-           <i class="fab fa-youtube"></i>
+           <font-awesome-icon icon="fa-play" />
            </span>
              <span>
-                <i class="fas fa-store"></i>
+        <font-awesome-icon icon="fa-shop" />
                 </span>      
              <span><label class="user" >
                 <i class="fas fa-users"></i></label>

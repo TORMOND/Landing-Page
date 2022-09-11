@@ -17,18 +17,44 @@
       <span>P:+2540000000</span>
      <span>@: support@pieme.info</span>
     </div>
+ <div id="popup" v-if="popup">
+   <div class="host-popup">
+    <div class="popup-closer">
+        <font-awesome-icon class="side-menu-icon" @click="closeBecomeHost" icon="xmark" />
+      </div>
+   
+    <h2>Please Enter Your Pieme Username/Email</h2>
+      <div class="host-form">
+        <form action="">
+          <input type="text" placeholder="Username/Email" class="email-input" v-model="email">
+          <input type="text" placeholder="Password" class="password-input" v-model="password">
+          <button class="submit-btn" v-if="(email =='')&& (password =='')">SUBMIT</button>
+          <button class="submit" v-else>SUBMIT</button>
+        </form>
+      </div>
+      <p>Don't have an account?</p>
+      <span style="color:#1976d2; display:inline;">Sign up</span>
+    </div>
+    </div>
+    
     <div class="container">
  
  <div class="home-intro" @scroll="scrollListener">
 
-       <video playsinline autoplay loop class="video">
-    <source src="newVideo.mp4" type="video/mp4" autoplay loop  >
-  </video>
-
-
 <nav>
     <div class="logo">
 <img src="piemelogo.png" alt="" class="image-logo">
+    </div>
+    <div class="navigations">
+       <ul>
+        <li>HOME</li>
+        <li>ABOUT</li>
+        <li>UPCOMING EVENTS</li>
+        <li>MORE</li>
+        <!-- <li>HOST NEWS</li> -->
+        <li>TESTIMONIALS</li>
+        <li>CONTACT</li>
+      </ul>
     </div>
     <div class="button">
   <button class="btn-scroll">Become a Host</button>
@@ -37,7 +63,6 @@
     <div class="sidemenu">
 <font-awesome-icon class="side-menu-icon" @click="closeMenu" icon="xmark" v-if="toggled" />
 <font-awesome-icon class="side-menu-icon" @click="toggleMenu" icon="align-justify" v-else  />
-
 
     </div>
   </nav>
@@ -48,27 +73,14 @@
     <div class="main-infor">
 <h1>PIEME. FOR US. BY US.</h1>
 <p>Do you love cooking? Turn your home into a part-time resturant
-and host events at you home.</p>
+and host events at your home.</p>
 <div class="btns">
 <button class="login" @click="loginPage">LOGIN</button>
-<button class="host">BECOME A HOST</button>
+<button class="host" @click="becomeHost">BECOME A HOST</button>
 </div>
 
 <div class="side-infor">
-      <div class="social-icons">
-         <div class="brand">
-          <font-awesome-icon icon="fabFacebook" class="brand-icons" /> 
-         </div>
-         <div class="brand">
-          <font-awesome-icon icon="fab-twitter" class="brand-icons" />
-         </div>
-         <div class="brand">
-          <font-awesome-icon icon="fab-instagram" class="brand-icons" />
-         </div>
-         <div class="brand">
-          <font-awesome-icon icon="fab-linkedin" class="brand-icons" />
-         </div>
-      </div>
+      
     </div>
     </div>
   </div>
@@ -93,11 +105,26 @@ and host events at you home.</p>
          local dishes with the community around them.
        </p>   
        </div>
-        <div class="image-section">
-          <!-- <img src="pieme1.png" alt=""> -->
-          <div class="overlay">PIEME</div>
-        </div>
-    
+       
+       <div class="about-details">
+       <p></p>
+       <p></p>
+        <p>
+         Pieme is the first of its kind social platform that enables individuals to turn their homes into part-time restaurants.
+          Different cultures have diverse cuisines that they are known for, and which people look to explore and try out.
+        </p>
+        <p>
+         Pieme seeks to decentralize the resturant industry, by creating opportunities for people to cook from the comfort of their homes and earn from it.
+          Enjoy low commission rates when you sign up as a host on Pieme.
+       </p>   
+       </div>
+       <div class="image-section">
+        <div class="overlay">PIEME</div>
+       </div>
+        <div class="image-section-2">
+          <div class="overlay">ACCOMODATION</div>
+       </div>
+
     </div>
 <div id="contain">
  <div class="offers-section">
@@ -184,7 +211,7 @@ and host events at you home.</p>
         </div>
       </div>
     </div>
-    <div class="pieme-news-section">
+    <!-- <div class="pieme-news-section">
       <div class="news-headers">
       <h1>PIEME</h1><h1 class="pieme-header">NEWS</h1>
       </div>
@@ -197,20 +224,60 @@ and host events at you home.</p>
          
         </div>
       </div>
-    </div>
+    </div> -->
+     <div class="tracking-in-contract">
+      <h2>WHAT HOSTS SAY?</h2>
+      </div>
     <div class="promo-section">
+      
       <div class="banner">
         <div class="top-section">
-          <h2>WHAT HOSTS SAY?</h2>
+  
+          <p>Quick remittance of money from orders delivered and the low commission rate is definately a plus for me.</p>
+        </div>
+
+        <div class="commentor-profile">
+          <img src="yvonne.png" alt="" class="profilePic">
+          <div class="profile-details">
+            <h3 class="name">Chef Evonne</h3>
+            <div class="institution">
+              <p>Top Chef Alumni</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="top-section">
+       
           <p>Great Concept that's giving many of us a chance to grow our skills.</p>
         </div>
 
         <div class="commentor-profile">
-          <img src="" alt="" class="profilePic">
+          <img src="chef_raphael.png" alt="" class="profilePic">
           <div class="profile-details">
-            <div class="name">Chef Raphael</div>
+
+
+            <h3 class="name">Chef Raphael</h3>
             <div class="institution">
               <p>Raphael Studios</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="banner">
+        <div class="top-section">
+
+          <p>The fact that I can work from home without having to open a restaurant is what encouraged me to sign up.</p>
+        </div>
+
+        <div class="commentor-profile">
+          <img src="brian.png" alt="" class="profilePic">
+          <div class="profile-details">
+            <h3 class="name">Chef Brian</h3>
+            <div class="institution">
+              <p>Utali college</p>
             </div>
           </div>
         </div>
@@ -237,29 +304,38 @@ Footer, Carousel
   },
   data() {
     return {
+      email:"",
+      password:'',
       pictures:[
        ['chefs.png','college.png'],
        ['dine.png','onboarding.png'],
        ['chefs.png','college.png'],
        ['dine.png','onboarding.png'],
       ],
-      toggled:false
+      toggled:false,
+      popup:false,
     }
   },
   methods: {
+    becomeHost:function(){
+     this.popup = true
+    },
+    closeBecomeHost:function(){
+        this.popup = false
+    },
     loginPage:function(){
     this.$router.push('/LoginPage')
     },
     toggleMenu:function(){
       this.toggled=true
     const sideMenu = document.querySelector('#side-menu')
-    sideMenu.style.marginLeft = "80%"
+    sideMenu.style.display ="block"
     sideMenu.style.transition = "0.8s";
     },
     closeMenu:function(){
       this.toggled=false
     const sideMenu = document.querySelector('#side-menu')
-    sideMenu.style.marginLeft = "120vw"
+    sideMenu.style.display ="none"
     sideMenu.style.transition = "0.8s";
     },
     scrollListener:function(){
@@ -291,49 +367,111 @@ Footer, Carousel
 }
 </script>
 <style scoped>
-.brand{
-  width: 40px;
-  height: 40px;
-  border: 0.5px solid #fff;
-  border-radius: 50%;
-  display: flex;
+@font-face {
+font-family: "Oswald";
+src: url("../../public/oswald/Oswald-ExtraLight.ttf");
+}
+h1{
+  font-family: Oswald, sans-serif;
+}
+#popup{
+    background-color: rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box; 
+display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  transition: 0.8s;
+  position:fixed;
+  z-index: 4;
 }
-.brand:hover{
-   border: 1px solid #1976d2; 
+.host-popup{
+  background-color:#fff;
+  padding: 20px;
 }
-.brand-icons{
-  font-size: 12px;
-  color: #fff;
+.host-form{
+  padding: 20px;
 }
-.social-icons{
+form{
   display: flex;
-  gap: 5px;
-  padding-left: 20px;
+  flex-direction:column;
+  gap:20px;
 }
+
+.submit-btn{
+  border: none;
+  padding:10px 20px;
+  background-color: #F4F4F4;
+  color: #777777;
+  cursor:pointer;
+}
+.submit{
+  border: none;
+  padding:10px 20px;
+  background-color: #1976d2;
+  color: #fff;
+  cursor:pointer;
+}
+.tracking-in-contract{
+  background-color:#fff;
+  padding: 20px;
+}
+.tracking-in-contract h2 {
+  color:#777777;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #b19777; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+   margin: 0 auto; /*Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  width:50%;
+  animation: 
+    typing 3.5s steps(40, end) infinite,
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #b19777; }
+}
+
 .home{
   position:relative;
   overflow: hidden;
 }
+.profilePic{
+  width: 100px;
+  height: 100px;
+  border-radius:50%;
+}
 .home-intro{
   height: 80vh;
-  background:transparent;
+  background:#777777;
   color:#fff;
   position:relative;
   width: 100vw;
   box-sizing: border-box;
 }
+.navigations ul{
+  display: flex;
+  gap:20px;
+}
+.navigations li{
+  list-style:none;
+  cursor:pointer;
+}
 .video{
-  position:absolute;
-  z-index: -1;
-  margin-left: -680px;
+  margin-top:-80px;
   box-sizing: border-box;
-  width:99vw;
+  width:40vw;
   object-fit: cover;
-  height:inherit;
+  height:70vh;
 }
 nav{
     background: transparent;
@@ -344,6 +482,9 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
+.sidemenu{
+  display:none
+}
 .side-menu-icon{
   color: #b19777;
   font-size: 32px;
@@ -352,6 +493,7 @@ nav{
 }
 .nav-scrolled{
 background-color:#fff;
+color:#777777;
 position:fixed;
 z-index: 2;
 padding:10px 60px;
@@ -364,7 +506,7 @@ box-shadow: 3px 3px 3px #ceced1;
   border-radius:32px;
   display: none;
   border: none;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   cursor: pointer;
   transition: 1s;
 }
@@ -373,6 +515,11 @@ box-shadow: 3px 3px 3px #ceced1;
   justify-content: center;
   text-align: center;
 }
+.popup-closer{
+  display: flex;
+  justify-content:end;
+  border-bottom: 1px solid #777777;
+  }
 .image-logo{
   width: 80px;
   height: 80px;
@@ -380,7 +527,7 @@ box-shadow: 3px 3px 3px #ceced1;
 .wrapper{
   display: flex;
   gap: 40px;
-  justify-content: center;
+  justify-content:center;
   padding: 10px 40px;
 }
 .line{
@@ -439,21 +586,30 @@ animation-iteration-count: infinite;
   background:#fff;
   }
 }
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
 /* ABOUT SECTION */
 
+.about-details{
+ border: 1px solid #777777;
+   border-radius:5px;
+   /* background-color:#b19777; */
+}
 .about-section{
   display:grid;
   grid-template-columns: repeat(2,1fr);
   gap:20px;
   margin: 0 auto;
-   padding:40px 20px 50px 20px;
+   padding:100px 20px 50px 20px;
   background-color: #ffffff;
-  height: 65vh;
 }
 .about-section p{
   text-align: start;
   padding: 20px;
-  color: #777777;
+  /* color: #777777; */
 }
 .headers, .news-headers{
   display: flex;
@@ -469,8 +625,17 @@ animation-iteration-count: infinite;
   object-fit: contain;
    background: url(/pieme1.png)no-repeat center;
     background-size: cover;
-    height: 400px;
-    width: 40vw;
+    height: 350px;
+    /* width: 35vw; */
+    position: relative;
+    transition: 0.8s;
+}
+.image-section-2{
+  object-fit: contain;
+   background: url(/accom1.jpeg)no-repeat center;
+    background-size: cover;
+    height: 350px;
+    /* width: 35vw; */
     position: relative;
     transition: 0.8s;
 }
@@ -480,15 +645,15 @@ animation-iteration-count: infinite;
 .overlay{
   background-color: #F4F4F4;
   position: absolute;
-  margin-left: 54%;
-  margin-top: 68%;
+  margin-left: 44%;
+  margin-top: 48%;
   padding: 18px 80px;
 }
+
 #side-menu{
   position:fixed;
-  margin-left:120vw;
-  width: 280px;
-  height: 100vh;
+  width:100vw;
+  height: 80vh;
   background-color: #Fff;
   z-index: 1;
   text-align:start;
@@ -506,32 +671,17 @@ animation-iteration-count: infinite;
   padding-block: 10px;
 }
 #contain{
- background: url(/cust4.jpg)no-repeat center;
+ background-color:#fff;
   background-size:cover;
   object-fit: cover;
 }
 .offers-section{
   padding: 20px 50px 0px 50px;
   color: #fff;
-   background-color: rgba(0, 0, 0, 0.5);
+   background-color: #777777;
    width: 100%;
    box-sizing: border-box;
 }
-/* header{
-  transform-style:preserve-3d ;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  position: relative;
-}
-.bkgd{
-  position:absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transform: translateZ(-10px) scale(2);
-  z-index: -1;
-} */
 .offers-header{
   text-align: start;
   font-size: 24px;
@@ -540,8 +690,6 @@ animation-iteration-count: infinite;
 .offers-table{
   display: grid;
   grid-template-columns: repeat(3,1fr);
-   /* background-color: rgba(0, 0, 0, 0.5); */
-  /* gap: 40px; */
 }
 .offer{
   height: 220px;
@@ -579,21 +727,42 @@ animation-iteration-count: infinite;
   height: inherit;
 }
 .promo-section{
-  height: 332px;
+  min-height: 320px;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   margin: 20px 0;
+  display:grid;
+
+  grid-template-columns: repeat(3, 1fr);
 }
 .banner{
   background-color: #fff;
   width: 30vw;
   height: inherit;
-  margin-left: 50vw;
   padding: 20px;
   box-sizing: border-box;
+  border-radius: 10px;
 }
-
+.email-input, .password-input{
+  padding: 15px 28px;
+  outline: none;
+  font-size: 16px;
+  border:1px splid #777777;
+}
+#side-menu{
+  display:none;
+}
 @media all and (max-width:500px) {
+  .navigations{
+    display:none;
+
+  }
+  .promo-section{
+   grid-template-columns: repeat(1, 1fr);
+  }
+  .banner{
+  width: 80vw;
+  }
   #side-menu{
   margin-left:0vw;
   width:100vw;
@@ -641,12 +810,16 @@ box-shadow: 3px 3px 3px #ceced1;
   grid-template-columns: repeat(1,1fr);
   /* gap: 40px; */
 }
+.promo-section{
+  grid-template-columns: repeat(1, 1fr);
+  gap:20px;
+}
 .image-section{
   object-fit: contain;
    background: url(/pieme1.png)no-repeat center;
     background-size: cover;
     height: 300px;
-    width: 80vw;
+    /* width: 80vw; */
     position: relative;
     transition: 0.8s;
 }
@@ -659,6 +832,9 @@ box-shadow: 3px 3px 3px #ceced1;
 }
 .side-infor{
   display: none;
+}
+.sidemenu{
+  display: block;
 }
 }
 
