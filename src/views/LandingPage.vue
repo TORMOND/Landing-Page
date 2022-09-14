@@ -58,7 +58,7 @@
       </ul>
     </div>
     <div class="button">
-  <button class="btn-scroll">Become a Host</button>
+  <button class="btn-scroll"  @click="becomeHost">Become a Host</button>
     </div>
   
     <div class="sidemenu">

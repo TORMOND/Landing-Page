@@ -20,51 +20,36 @@
      <button class="signup" @click.prevent="signupPage">SIGN UP</button>
     </form> 
     </div>
-   <!-- <div class="infor-section">
+   <div class="infor-section">
     <h1>Authentic Local food:</h1>
     <h1>For Us, By Us</h1>
  
-   <div >
+   <div class="description">
     <div class="description-image">
 <img src="meal.png" alt="">
     </div>
     <p>We connect you to Hosts offering authentic Local dishes</p>
    </div>
-   <div>
+   <div class="description">
      <div class="description-image">
       <img src="events.png" alt="">
     </div>
     <p>As a Host, share your Home as a part-time Restaurant or Event venue</p>
    </div>
-   <div>
+   <div class="description">
      <div class="description-image">
       <img src="network.png" alt="">
     </div>
     <p>Connect directly with your Guests in Pie Chat</p>
     </div>
-   <div>
+   <div class="description">
      <div class="description-image">
-      <img src="pimelogo" alt="">
+      <img src="piemelogo.png" alt="">
     </div>
     <p>The Pie Token is an exclusive payment option on Pieme</p>
     </div>
     
-    <div class="btns"> 
-      <button class="learn-more">Learn more</button>
-      <button class="google-play">
-        <div>
-          <p>GET IT ON</p>
-          <h3>Google Play</h3>
-        </div>
-      </button>
-      <button class="app-store">
-          <div>
-          <p>Download on the</p>
-          <h3>App Store</h3>
-        </div>
-      </button>
-    </div>
-   </div>   -->
+   </div>  
     </div>
   
   </div>
@@ -209,19 +194,27 @@ color: #edd00a;
   background: transparent;
 
 }
+.description{
+  display: flex;
+  padding-block: 20px;
+  align-items: center;
+  gap:20px;
+}
 .description-image{
-  width:90px;
-  height: 90px;
+  width:60px;
+  height: 60px;
   border-radius: 50%;
   background-color:#fff;
   object-fit: cover;
   display:flex;
+  justify-content: center;
+  align-items: center;
   overflow:hidden;
 }
 .description-image img{
   margin:auto;
-  width:90px;
-  height: 90px;
+  width:80px;
+  height: 60px;
   border-radius: 50%;
 }
 </style>
