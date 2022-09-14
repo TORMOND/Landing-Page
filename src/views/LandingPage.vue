@@ -5,13 +5,13 @@
         <font-awesome-icon class="side-menu-icon" @click="closeMenu" icon="xmark" />
       </div>
       <ul>
-        <li>HOME</li>
-        <li>ABOUT</li>
-        <li>UPCOMING EVENTS</li>
+        <li @click="home">HOME</li>
+        <li @click="about">ABOUT</li>
+        <li @click="events">UPCOMING EVENTS</li>
         <li>MORE</li>
         <li>HOST NEWS</li>
-        <li>TESTIMONIALS</li>
-        <li>CONTACT</li>
+        <li @click="testimonials">TESTIMONIALS</li>
+        <li @click="contacts">CONTACT</li>
       </ul>
 
       <span>P:+2540000000</span>
@@ -40,6 +40,7 @@
     <div class="container">
  
  <div class="home-intro" @scroll="scrollListener">
+<div class="intro">
 
 <nav>
     <div class="logo">
@@ -47,13 +48,13 @@
     </div>
     <div class="navigations">
        <ul>
-        <li>HOME</li>
-        <li>ABOUT</li>
-        <li>UPCOMING EVENTS</li>
+        <li @click="home">HOME</li>
+        <li @click="about">ABOUT</li>
+        <li @click="events">UPCOMING EVENTS</li>
         <li>MORE</li>
         <!-- <li>HOST NEWS</li> -->
-        <li>TESTIMONIALS</li>
-        <li>CONTACT</li>
+        <li @click="testimonials">TESTIMONIALS</li>
+        <li @click="contacts">CONTACT</li>
       </ul>
     </div>
     <div class="button">
@@ -67,11 +68,12 @@
     </div>
   </nav>
 
-
   <div class="wrapper">
     
     <div class="main-infor">
-<h1>PIEME. FOR US. BY US.</h1>
+<h1>PIEME.</h1>
+<h2> FOR US.</h2>
+<h3> BY US.</h3>
 <p>Do you love cooking? Turn your home into a part-time resturant
 and host events at your home.</p>
 <div class="btns">
@@ -79,13 +81,17 @@ and host events at your home.</p>
 <button class="host" @click="becomeHost">BECOME A HOST</button>
 </div>
 
-<div class="side-infor">
-      
-    </div>
-    </div>
-  </div>
 
     </div>
+    <div class="side-infor">
+      <img src="mobile2-pieme.jpg" alt="" class="mobile">
+    </div>
+  </div>
+</div>
+
+    </div>
+
+
     <div class="about-section">
        <div class="about-details">
       <div class="headers">
@@ -317,6 +323,21 @@ Footer, Carousel
     }
   },
   methods: {
+    home:function(){
+    window.scrollTo(0, 0)
+    },
+    about:function(){
+      window.scrollTo(0, 500)
+    },
+    events:function(){
+window.scrollTo(0, 1350)
+    },
+    testimonials:function(){
+window.scrollTo(0, 2050)
+    },
+    contacts:function(){
+window.scrollTo(0, 2300)
+    },
     becomeHost:function(){
      this.popup = true
     },
@@ -451,12 +472,18 @@ form{
   border-radius:50%;
 }
 .home-intro{
-  height: 80vh;
-  background:#777777;
+  min-height: 85vh;
+  background: url(/cust4.jpg)no-repeat center;
+  background-size:cover;
+  object-fit: cover;  
   color:#fff;
   position:relative;
   width: 100vw;
   box-sizing: border-box;
+}
+.intro{
+  background-color: rgba(15, 15, 15, 0.76);
+  height:inherit;
 }
 .navigations ul{
   display: flex;
@@ -465,6 +492,11 @@ form{
 .navigations li{
   list-style:none;
   cursor:pointer;
+  transition: 0.8s;
+}
+.navigations li:hover{
+color: #166FA5;
+
 }
 .video{
   margin-top:-80px;
@@ -473,8 +505,20 @@ form{
   object-fit: cover;
   height:70vh;
 }
+.mobile{
+  margin-top:10px;
+  margin-left: 300px;
+  position:absolute;
+  box-sizing: border-box;
+  z-index: 1;
+  width:20vw;
+  object-fit:contain;
+  height:80vh;
+  border-radius: 10px;
+  overflow: hidden;
+}
 nav{
-    background: transparent;
+    /* background-color:#1976d2; */
     width: 100vw;
     box-sizing: border-box;
     display: flex;
@@ -527,7 +571,9 @@ box-shadow: 3px 3px 3px #ceced1;
 .wrapper{
   display: flex;
   gap: 40px;
-  justify-content:center;
+  /* background-color: rgba(15, 15, 15, 0.76); */
+   /* background-color:#1976d2; */
+  box-sizing:border-box;
   padding: 10px 40px;
 }
 .line{
@@ -549,6 +595,17 @@ box-shadow: 3px 3px 3px #ceced1;
 }
 .main-infor h1{
   font-size: 56px;
+  color:#166FA5;
+}
+.main-infor h2{
+  font-size: 56px;
+  color:#166FA5;
+  font-family: Oswald, sans-serif;
+}
+.main-infor h3{
+  font-size: 56px;
+  color:#166FA5;
+  font-family: Oswald, sans-serif;
 }
 .main-infor p{
   text-align: start;
@@ -592,7 +649,6 @@ animation-iteration-count: infinite;
   flex-direction: column;
 }
 /* ABOUT SECTION */
-
 .about-details{
  border: 1px solid #777777;
    border-radius:5px;
@@ -622,8 +678,8 @@ animation-iteration-count: infinite;
    color: #BAD8F5;
 }
 .image-section{
-  object-fit: contain;
-   background: url(/pieme1.png)no-repeat center;
+    object-fit: contain;
+    background: url(/pieme1.png)no-repeat center;
     background-size: cover;
     height: 350px;
     /* width: 35vw; */
@@ -649,7 +705,6 @@ animation-iteration-count: infinite;
   margin-top: 48%;
   padding: 18px 80px;
 }
-
 #side-menu{
   position:fixed;
   width:100vw;
@@ -752,6 +807,27 @@ animation-iteration-count: infinite;
 #side-menu{
   display:none;
 }
+@media all and (max-width:1024px) {
+  .mobile{
+    margin-left: 10px;
+  }
+}
+@media all and (max-width:800px) {
+  .mobile{
+    margin-left: 10px;
+  }
+  .sidemenu{
+  display: block;
+}
+  .overlay{
+    margin-top: 300px;
+    margin-left: 20px;
+  }
+    .navigations{
+    display:none;
+
+  }
+}
 @media all and (max-width:500px) {
   .navigations{
     display:none;
@@ -786,18 +862,27 @@ box-shadow: 3px 3px 3px #ceced1;
 .nav-scrolled{
   padding: 10px;
 }
-.btn-scroll{
+.button{
   margin-top: 20px;
   border-radius: 0px 32px  32px 0px ;
+  display:none;
 }
 .main-infor{
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items:flex-start;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 .main-infor h1{
+  font-size:24px;
+  padding: 10px 0;
+}
+.main-infor h2{
+  font-size:24px;
+  padding: 10px 0;
+}
+.main-infor h3{
   font-size:24px;
   padding: 10px 0;
 }
